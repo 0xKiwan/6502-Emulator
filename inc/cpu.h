@@ -43,6 +43,34 @@ typedef struct _cpu_6502_t
 */
 emu_e_result_t cpu_6502_init(cpu_6502_t *cpu);
 
+/**
+ * @brief Resets the 6502 CPU
+ * 
+ * @param cpu Pointer to the 6502 CPU
+ * 
+ * @return EMU_RES_OK if successful
+*/
+emu_e_result_t cpu_6502_reset(cpu_6502_t *cpu);
+
+/**
+ * @brief Executes the next instruction
+ * 
+ * @param cpu Pointer to the 6502 CPU
+ * 
+ * @return EMU_RES_OK if successful
+*/
+emu_e_result_t cpu_6502_execute_instruction(cpu_6502_t *cpu);
+
+/**
+ * @brief Fetches and decodes the next instruction
+ * 
+ * @param cpu Pointer to the 6502 CPU
+ * 
+ * @return EMU_RES_OK if successful
+*/
+emu_e_result_t cpu_6502_fetch_decode(cpu_6502_t *cpu, uint8_t* opcode, uint8_t* operand);
+
+
 
 
 
